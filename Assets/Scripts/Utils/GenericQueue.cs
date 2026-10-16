@@ -7,7 +7,7 @@ namespace Utils
     {
     [Serializable]
     public class GenericQueue<T> {
-        private List<T> queue;
+        public List<T> queue;
 
         public GenericQueue() {
             queue = new List<T>();
