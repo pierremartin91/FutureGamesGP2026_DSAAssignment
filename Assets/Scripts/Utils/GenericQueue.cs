@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace Utils
     {
+    [Serializable]
     public class GenericQueue<T> {
         private List<T> queue;
 
