@@ -5659,16 +5659,16 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 457571fe0713d9d42abeff8ada485e7c, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: testTasks.queue.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'testTasks.queue.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: ff03f0eefaebe9e40aa1e0d120fb14ac, type: 2}
+      objectReference: {fileID: 11400000, guid: d001f82940f05f848ba9ec691d534f49, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'testTasks.queue.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: bd223246d06982a4dabfc7adbcd76207, type: 2}
+      objectReference: {fileID: 11400000, guid: 457571fe0713d9d42abeff8ada485e7c, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'testTasks.queue.Array.data[2]'
       value: 
