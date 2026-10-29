@@ -10,9 +10,6 @@ namespace Environment {
 
         [SerializeField] private GenericQueue<Task> testTasks = new GenericQueue<Task>();
 
-        public void Awake() {
-        }
-
         public void OnInteract() {
             testTasks.Dequeue().Execute();
         }

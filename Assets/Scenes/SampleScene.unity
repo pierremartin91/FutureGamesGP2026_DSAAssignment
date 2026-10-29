@@ -5595,6 +5595,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7, y: 4.25, z: 4.0009975}
   m_Center: {x: 1.5000005, y: 2.125, z: -2.0004988}
+--- !u!1 &2117814945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1057683460427819544, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+  m_PrefabInstance: {fileID: 6825722813265351610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2117814947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117814945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b938718c86124b90814815c04314f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EmployeeManager
+  Employees: []
 --- !u!1 &2146931727 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ea24fb8ab1d15d4d806780ee4ec59fb, type: 3}
@@ -5716,7 +5734,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1057683460427819544, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2117814947}
   m_SourcePrefab: {fileID: 100100000, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
 --- !u!1001 &8404672306686481740
 PrefabInstance:
