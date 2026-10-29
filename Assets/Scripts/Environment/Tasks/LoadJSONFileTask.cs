@@ -8,8 +8,6 @@ namespace Environment.Tasks {
         [SerializeField] TextAsset jsonFile;
 
         public override void Execute() {
-            //Employee[] Employees = JsonUtility.FromJson<EmployeeArray>(jsonFile.text).employees;
-
             EmployeeManager.Instance.Employees = JsonUtility.FromJson<EmployeeArray>(jsonFile.text).employees;
 
             foreach(Employee e in EmployeeManager.Instance.Employees) {

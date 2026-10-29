@@ -1,7 +1,18 @@
 using System;
 using System.Diagnostics;
+using UnityEngine;
 
 public static class MergSort {
+    public static void SortEmployeeArrayByExitDateTime(Employee[] array, int left, int right) {
+        if(left < right) {
+            int middle = left + (right - left) / 2;
+
+            SortEmployeeArrayByExitDateTime(array, left, middle);
+            SortEmployeeArrayByExitDateTime(array, middle + 1, right);
+
+            merge(array, left, middle, right);
+        }
+    }
 
     private static void merge(Employee[] array, int left, int middle, int right) {
         int leftArraySize = middle - left + 1;      // if middle was 1 and left was 0, that's 2 elements, thus the need for the + 1
@@ -10,6 +21,7 @@ public static class MergSort {
         Employee[] leftSide = new Employee[leftArraySize];
         Employee[] rightSide = new Employee[rightArraySize];
 
+        
         int i, j;
 
         for(i = 0; i < leftArraySize; i++)
@@ -42,16 +54,4 @@ public static class MergSort {
         Console.WriteLine();
 
     }
-
-    public static void SortEmployeeArrayByExitDateTime(Employee[] array, int left, int right) {
-        if(left < right) {
-            int middle = left + (right - left) / 2;
-
-            SortEmployeeArrayByExitDateTime(array, left, middle);
-            SortEmployeeArrayByExitDateTime(array, middle + 1, right);
-
-            merge(array, left, middle, right);
-        }
-    }
-
 }
