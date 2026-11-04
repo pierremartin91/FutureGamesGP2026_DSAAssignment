@@ -49,9 +49,9 @@ public static class MergSort {
         while(j < rightArraySize)
             array[k++] = rightSide[j++];
 
-        for(int x = 0; x < array.Length; ++x)
-            Console.Write(array[x] + " ");
-        Console.WriteLine();
+        //for(int x = 0; x < array.Length; ++x)
+        //    Console.Write(array[x] + " ");
+        //Console.WriteLine();
 
     }
 }

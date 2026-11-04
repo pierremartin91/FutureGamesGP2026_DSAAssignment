@@ -1,45 +1,60 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BinarySearch
 {
-    public static Employee[] EmployeesWithinDateTimeRange(Employee[] employees,  DateTime lowerRange, DateTime upperRange) {
+    public static Employee[] EmployeesWithinDateTimeRange(Employee[] employees,
+        DateTime lowerRange, DateTime upperRange) {
 
-        int low = 0, high = employees.Length - 1;
+        int indexLowerRange = 0;
+        int indexUpperRange = employees.Length - 1;
 
-        // need to find employee with datetime that is at the TOP of the range and at the BOTTOM
-        // maybe run two binary searches for top and bottom, find the index, and add all employees to
-        // said range with a simple comparison
+        int indexLeft = 0;
+        int indexRight = employees.Length - 1;
 
-        /*
-         * the problem is that the ranges supplied might not match up 1:1 with employees, so they need to be
-         * stored in their own DateTime variables
-         * 
-         * could easily bruteforce this but ideally we want an elegant solution to find the top and bottom indexes
-         * just save the index of employee who currently meets the range comparison 
-         * 
-         * if lowerRange < employee.lastExit
-         * 
-         * 
-         * 
-         * 
-         */
+        int middle = 0;
 
+        while(indexLeft <= indexRight) {
+            middle = (indexLeft + indexRight) / 2;
 
-        while(low <= high) {
-            int median = low + (low + high) / 2;
+            if(employees[middle].lastEntranceInEngineRoomDateTime >= lowerRange) {
+                indexLowerRange = middle;
+            }
 
-            if(employees[median].lastExitFromEngineRoomDateTime == dateTime)
-                return employees[median];
-
-            if(employees[median].lastExitFromEngineRoomDateTime < dateTime)
-                low = median + 1;
+            if(employees[middle].lastEntranceInEngineRoomDateTime < lowerRange)
+                indexLeft = middle + 1;
             else
-                low = median - 1;
+                indexRight = middle - 1;
         }
 
-        return null;
-    }
+        indexLeft = 0;
+        indexRight = employees.Length - 1;
 
-    private static Employee 
+        middle = 0;
+
+        while(indexLeft <= indexRight) {
+            middle = (indexLeft + indexRight) / 2;
+
+            if(employees[middle].lastEntranceInEngineRoomDateTime <= upperRange) {
+                indexUpperRange = middle;
+            }
+
+            if(employees[middle].lastEntranceInEngineRoomDateTime > upperRange)
+                indexLeft = middle + 1;
+            else
+                indexRight = middle - 1;
+        }
+
+        Employee[] gayArrayForIdiots = new Employee[indexUpperRange - indexLowerRange + 1];
+
+        int k = 0;
+
+        for(int i = indexLowerRange; i <= indexUpperRange; i++) {
+            gayArrayForIdiots[k++] = employees[i];
+        }
+
+        return gayArrayForIdiots;
+
+    }
 }
