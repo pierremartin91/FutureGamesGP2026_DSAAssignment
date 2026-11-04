@@ -4,8 +4,7 @@ using UnityEngine.UIElements;
 
 public class BinarySearch
 {
-    public static Employee[] EmployeesWithinDateTimeRange(Employee[] employees,
-        DateTime lowerRange, DateTime upperRange) {
+    public static Employee[] EmployeesWithinDateTimeRange(Employee[] employees, DateTime lowerRange, DateTime upperRange) {
 
         int indexLowerRange = 0;
         int indexUpperRange = employees.Length - 1;
@@ -46,15 +45,15 @@ public class BinarySearch
                 indexRight = middle - 1;
         }
 
-        Employee[] gayArrayForIdiots = new Employee[indexUpperRange - indexLowerRange + 1];
+        Employee[] searchedArray = new Employee[indexUpperRange - indexLowerRange + 1];
 
         int k = 0;
 
         for(int i = indexLowerRange; i <= indexUpperRange; i++) {
-            gayArrayForIdiots[k++] = employees[i];
+            searchedArray[k++] = employees[i];
         }
 
-        return gayArrayForIdiots;
+        return searchedArray;
 
     }
 }

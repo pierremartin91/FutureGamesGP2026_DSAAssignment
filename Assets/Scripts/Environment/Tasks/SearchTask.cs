@@ -7,18 +7,16 @@ using System.Diagnostics;
 public class SearchTask : Task {
     public override void Execute() {
 
-        Employee[] testArray = BinarySearch.EmployeesWithinDateTimeRange(EmployeeManager.Instance.Employees,
+        Employee[] arrayOutput = BinarySearch.EmployeesWithinDateTimeRange(EmployeeManager.Instance.Employees,
             new DateTime(2234, 08, 07, 20, 44, 44),
             new DateTime(2234, 04, 07, 20, 44, 44));
 
-
-        foreach(Employee e in testArray) {
+        foreach(Employee e in arrayOutput) {
             e.Initialise();
             UnityEngine.Debug.Log(e.name);
             UnityEngine.Debug.Log(e.lastExitFromEngineRoomDateTime);
         }
 
-        UnityEngine.Debug.Log(testArray.Length);
-
+        UnityEngine.Debug.Log(arrayOutput.Length);
     }
 }
