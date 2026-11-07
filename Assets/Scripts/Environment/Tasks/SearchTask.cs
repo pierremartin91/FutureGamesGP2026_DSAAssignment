@@ -7,9 +7,15 @@ using System.Diagnostics;
 public class SearchTask : Task {
     public override void Execute() {
 
+        Stopwatch stopwatch = new Stopwatch();
+
+        stopwatch.Start();
+
         Employee[] arrayOutput = BinarySearch.EmployeesWithinDateTimeRange(EmployeeManager.Instance.Employees,
             new DateTime(2234, 08, 07, 20, 44, 44),
             new DateTime(2234, 04, 07, 20, 44, 44));
+
+        stopwatch.Stop();
 
         foreach(Employee e in arrayOutput) {
             e.Initialise();
@@ -18,5 +24,7 @@ public class SearchTask : Task {
         }
 
         UnityEngine.Debug.Log(arrayOutput.Length);
+
+        UnityEngine.Debug.Log(stopwatch.ElapsedTicks);
     }
 }
