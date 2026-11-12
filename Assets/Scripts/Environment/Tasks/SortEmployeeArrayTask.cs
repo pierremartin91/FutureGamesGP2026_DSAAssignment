@@ -8,11 +8,6 @@ namespace Environment.Tasks {
         public override void Execute() {
 
             MergSort.SortEmployeeArrayByExitDateTime(EmployeeManager.Instance.Employees, 0, EmployeeManager.Instance.Employees.Length - 1);
-
-            //foreach(Employee e in EmployeeManager.Instance.Employees) {
-            //    Debug.Log(e.name);
-            //    Debug.Log(e.lastEntranceInEngineRoomDateTime);
-            //}
         }
     }
 }

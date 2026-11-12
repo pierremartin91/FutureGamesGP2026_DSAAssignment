@@ -17,11 +17,11 @@ public class BinarySearch
         while(indexLeft <= indexRight) {
             middle = (indexLeft + indexRight) / 2;
 
-            if(employees[middle].lastEntranceInEngineRoomDateTime >= lowerRange) {
+            if(employees[middle].lastExitFromEngineRoomDateTime >= lowerRange) {
                 indexLowerRange = middle;
             }
 
-            if(employees[middle].lastEntranceInEngineRoomDateTime < lowerRange)
+            if(employees[middle].lastExitFromEngineRoomDateTime < lowerRange)
                 indexLeft = middle + 1;
             else
                 indexRight = middle - 1;
@@ -35,15 +35,18 @@ public class BinarySearch
         while(indexLeft <= indexRight) {
             middle = (indexLeft + indexRight) / 2;
 
-            if(employees[middle].lastEntranceInEngineRoomDateTime <= upperRange) {
+            if(employees[middle].lastExitFromEngineRoomDateTime <= upperRange) {
                 indexUpperRange = middle;
             }
 
-            if(employees[middle].lastEntranceInEngineRoomDateTime > upperRange)
-                indexLeft = middle + 1;
-            else
+            if(employees[middle].lastExitFromEngineRoomDateTime > upperRange)
                 indexRight = middle - 1;
+            else
+                indexLeft = middle + 1;
+
         }
+
+        Debug.Log("Upper range - " + indexUpperRange + " Lower range - " + indexLowerRange);
 
         Employee[] searchedArray = new Employee[indexUpperRange - indexLowerRange + 1];
 

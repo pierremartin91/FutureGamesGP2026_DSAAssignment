@@ -71,39 +71,34 @@ public class BinaryTree {
         Debug.Log(i);
     }
 
-    public static Employee[] EmployeesWithinDateTimeRange(DateTime lowerRange, DateTime upperRange) {
-        // CURRENTLY DOES NOT WORK
+    public static void RecursiveEnqueue(TreeNode node, DateTime lowerRange,
+        DateTime upperRange, GenericQueue<TreeNode> queue) {
+        if(node == null) {
+            return;
+        }
+        if(node.data.lastExitFromEngineRoomDateTime >= lowerRange) {
+            RecursiveEnqueue(node.left, lowerRange, upperRange, queue);
+        }
+        if(node.data.lastExitFromEngineRoomDateTime >= lowerRange &&
+            node.data.lastExitFromEngineRoomDateTime <= upperRange) {
+            queue.Enqueue(node);
+        }
+        if(node.data.lastExitFromEngineRoomDateTime <= upperRange) {
+            RecursiveEnqueue(node.right, lowerRange, upperRange, queue);
+        }
+    }
 
+    public static Employee[] EmployeesWithinDateTimeRange(DateTime lowerRange, DateTime upperRange) {
         GenericQueue<TreeNode> queue = new GenericQueue<TreeNode>();
 
-        TreeNode current = top;
-        bool finished = false;
+        RecursiveEnqueue(top, lowerRange, upperRange, queue);
 
-        while(current != null) {
+        int queueSize = queue.queue.Count;
 
-            if(current.data.lastExitFromEngineRoomDateTime > lowerRange) {
-                queue.Enqueue(current);
-                if(current.left != null) {
-                    current = current.left;
+        Employee[] searchedArray = new Employee[queueSize];
 
-                }
-                continue;
-            }
-            if(current.data.lastExitFromEngineRoomDateTime <= upperRange) {
-                queue.Enqueue(current);
-                if(current.right != null) {
-                    current = current.right;
-
-                }
-                continue;
-            } else
-            current = null;
-        }
-
-        Employee[] searchedArray = new Employee[queue.queue.Count];
-
-        for(int i = 0; i <= queue.queue.Count - 1; i++) {
-            searchedArray[i++] = queue.Dequeue().data;
+        for(int i = 0; i < queueSize; i++) {
+            searchedArray[i] = queue.Dequeue().data;
         }
 
         return searchedArray;

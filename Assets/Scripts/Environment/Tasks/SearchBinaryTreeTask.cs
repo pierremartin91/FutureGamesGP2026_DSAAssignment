@@ -9,20 +9,24 @@ namespace Environment.Tasks {
     public class SearchBinaryTreeTask : Task {
         public override void Execute() {
 
+            UnityEngine.Debug.Log("BEGGINING SEARCH BINARY TREE TASK");
+
             Stopwatch stopwatch = new Stopwatch();
 
             stopwatch.Start();
 
             Employee[] arrayOutput = BinaryTree.EmployeesWithinDateTimeRange(
-                new DateTime(2234, 08, 07, 20, 44, 44),
-                new DateTime(2234, 04, 07, 20, 44, 44));
+                new DateTime(2234, 8, 9, 22, 00, 00),
+                new DateTime(2234, 8, 9, 23, 00, 00));
 
             stopwatch.Stop();
 
-            foreach(Employee e in arrayOutput) {
-                e.Initialise();
-                UnityEngine.Debug.Log(e.name);
-                UnityEngine.Debug.Log(e.lastExitFromEngineRoomDateTime);
+            UnityEngine.Debug.Log(arrayOutput.Length);
+
+            for (int i = 0; i < arrayOutput.Length; i++) {
+                UnityEngine.Debug.Log(arrayOutput[i].name + ":");
+                UnityEngine.Debug.Log("Last Entrance: " + arrayOutput[i].lastEntranceInEngineRoomDateTime);
+                UnityEngine.Debug.Log("Last Exit: " + arrayOutput[i].lastExitFromEngineRoomDateTime);
             }
 
             UnityEngine.Debug.Log(arrayOutput.Length);
