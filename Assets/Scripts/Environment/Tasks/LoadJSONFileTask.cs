@@ -12,8 +12,6 @@ namespace Environment.Tasks {
 
             foreach(Employee e in EmployeeManager.Instance.Employees) {
                 e.Initialise();
-                Debug.Log(e.name);
-                Debug.Log(e.lastEntranceInEngineRoomDateTime);
             }
         }
     }

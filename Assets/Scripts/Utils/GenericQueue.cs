@@ -13,8 +13,11 @@ namespace Utils
             queue = new List<T>();
         }
 
+        public bool IsEmpty() {  return queue.Count == 0; }
+
         public void Enqueue(T item) {
             queue.Add(item);
+            
         }
 
         public T Peek() {

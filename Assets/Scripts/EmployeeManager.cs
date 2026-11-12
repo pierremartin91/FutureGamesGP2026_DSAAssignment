@@ -6,6 +6,8 @@ public class EmployeeManager : MonoBehaviour
 
     public Employee[] Employees = null;
 
+    public BinaryTree employeeBinaryTree = null;
+
     public void Awake() {
         Instance = this;
     }
