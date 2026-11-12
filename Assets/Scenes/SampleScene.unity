@@ -5677,7 +5677,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 457571fe0713d9d42abeff8ada485e7c, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: testTasks.queue.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'testTasks.queue.Array.data[0]'
@@ -5690,7 +5690,11 @@ PrefabInstance:
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'testTasks.queue.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: 4373721c1c134f84093a3d0de309d44c, type: 2}
+      objectReference: {fileID: 11400000, guid: d78523d3a16d1f2408ad5025770f9d5c, type: 2}
+    - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+      propertyPath: 'testTasks.queue.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a47cb17c2c68eb45a8a683c50e369d9, type: 2}
     - target: {fileID: 5694532769315531512, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
