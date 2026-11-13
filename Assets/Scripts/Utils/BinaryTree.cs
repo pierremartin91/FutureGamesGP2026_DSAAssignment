@@ -36,7 +36,7 @@ public class BinaryTree {
         EmployeeManager.Instance.employeeBinaryTree = new BinaryTree();
 
         top = new TreeNode {
-            data = EmployeeManager.Instance.Employees[400]
+            data = EmployeeManager.Instance.Employees[0]
         };
 
         foreach(Employee e in EmployeeManager.Instance.Employees) {
